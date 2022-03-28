@@ -1,0 +1,51 @@
+body {
+    background-color: #403d3d;
+    margin: 20px;
+  }
+  .cell {
+    
+      min-width: fit-content;
+      min-height: fit-content;
+      
+      display: flex;
+  
+     
+      flex-grow: 1;
+      margin-right: 0px;
+      border: 1px solid black;
+    
+      
+    }
+    .gridRow {
+      
+  
+      min-width: fit-content;
+      min-height: fit-content;
+      
+      display: flex;
+  
+      
+      flex-grow: 1;
+      margin-right: 2px;
+     
+ 
+     
+  }
+  
+    #container {
+      
+   display: flex;
+   flex-direction: column;
+     border: 1px solid #69bfdb;
+      min-width: 500px;
+      min-height: 500px;
+      max-width: 500px;
+      max-height: 500px;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  position: relative;
+
+ 
+  
+  }
+  
