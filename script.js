@@ -62,10 +62,56 @@ let easygo = colorify1
     let randomo = document.querySelector(`#container > div:nth-child(2) > div:nth-child(5)`)
     randomo.style.backgroundColor = 'white'
 },3500)
-
-   
-    
 })
+
+function secondL() {
+    let easygo = colorify1
+  setTimeout(easygo, 1000, '4', '4')
+  setTimeout(function() {
+    let randomo = document.querySelector(`#container > div:nth-child(4) > div:nth-child(4)`)
+    randomo.style.backgroundColor = 'white'
+},1500)
+
+
+  setTimeout(easygo, 2000, '2', '1')
+  setTimeout(function() {
+    let randomo = document.querySelector(`#container > div:nth-child(2) > div:nth-child(1)`)
+    randomo.style.backgroundColor = 'white'
+},2500)
+
+
+  setTimeout(easygo, 3000, '6', '3')
+  setTimeout(function() {
+    let randomo = document.querySelector(`#container > div:nth-child(6) > div:nth-child(3)`)
+    randomo.style.backgroundColor = 'white'
+},3500)
+}
+
+function thirdL() {
+    let easygo = colorify1
+  setTimeout(easygo, 1000, '1', '6')
+  setTimeout(function() {
+    let randomo = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
+    randomo.style.backgroundColor = 'white'
+},1500)
+
+
+  setTimeout(easygo, 2000, '6', '4')
+  setTimeout(function() {
+    let randomo = document.querySelector(`#container > div:nth-child(6) > div:nth-child(4)`)
+    randomo.style.backgroundColor = 'white'
+},2500)
+
+
+  setTimeout(easygo, 3000, '1', '6')
+  setTimeout(function() {
+    let randomo = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
+    randomo.style.backgroundColor = 'white'
+},3500)
+}
+
+
+
 
 function gogo() {}
 
@@ -102,25 +148,25 @@ hardBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(21,21)
 })
-function tweR() {
-    let rando = Math.floor(Math.random() * 12) + 1;
-    return rando
-}
+
 
 container.addEventListener('click', gogo, false)
 function gogo(e) {
     
   let es = event.target
 
-
-    let tar1 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(2)`)
+// Easy Mode
+let lv2tar1 = document.querySelector(`#container > div:nth-child(4) > div:nth-child(4)`)
+let lv2tar2 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(1)`)
+let lv2tar3 = document.querySelector(`#container > div:nth-child(6) > div:nth-child(3)`)
+    let lv1tar1 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(2)`)
      let tar2 = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
     let tar3 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(5)`)
 
     if (es === container || es === rows) {
         false;
-    } else if (es === tar1) {
-        tar1.style.backgroundColor = 'green'
+    } else if (es === lv1tar1) {
+        lv1tar1.style.backgroundColor = 'green'
   
     } else if (es === tar2) {
         tar2.style.backgroundColor = 'green'
@@ -128,17 +174,22 @@ function gogo(e) {
     } else if (es === tar3) {
         tar3.style.backgroundColor = 'green'
 
-    }
-  
-    if (tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green') {
-        setTimeout(() => {
-            alert('You have won! Go to the next level')
-        }, 1000);
-        location.reload()
+    } else {
+        es.style.backgroundColor = 'red'
+    
     }
 
-    console.log(es)
-   
+    if (lv1tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green') {
+        setTimeout(() => {
+            alert('You have won! Go to the next level')
+        }, 500);
+     container.textContent = ''
+     makeBoth(6,6)
+     secondL()
+    }
+
+
+
 
 }
     
