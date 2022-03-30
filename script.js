@@ -46,7 +46,7 @@ easyBtn.addEventListener('click', () => {
 })
 
 
-function firstL(t1, t2, t3, t4, t5, t6) {
+function firstL(t1, t2, t3, t4, t5, t6, t7, t8) {
     let easygo = colorify1
   setTimeout(easygo, 1000, t1, t2)
   setTimeout(function() {
