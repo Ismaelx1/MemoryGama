@@ -80,7 +80,9 @@ setTimeout(function() {
 
 
 
-
+function conta() {
+    container.textContent =''
+}
 
 
 
@@ -103,6 +105,7 @@ container.addEventListener('click', gogo, false)
 function gogo(e) {
     
   let es = event.target
+  
 
 // Easy Mode
     let tar1 = document.querySelector(`#container > div:nth-child(3) > div:nth-child(1)`)
@@ -139,9 +142,9 @@ function gogo(e) {
     if ( tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green' && tar4.style.backgroundColor === 'green') {
         setTimeout(() => {
             alert('You have won! Go to the next level')
-        }, 800);
-     container.textContent = ''
-     makeBoth(12,12)
+        }, 1000);
+        setTimeout(conta, 800)
+        setTimeout(makeBoth, 800, 12, 12)
     }
 
 
