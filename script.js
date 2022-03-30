@@ -42,73 +42,39 @@ function makeBoth(rowNum, cellNum) {
 easyBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(6,6)
-let easygo = colorify1
-  setTimeout(easygo, 1000, '2', '2')
-  setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(2) > div:nth-child(2)`)
-    randomo.style.backgroundColor = 'white'
-},1500)
-
-
-  setTimeout(easygo, 2000, '1', '6')
-  setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
-    randomo.style.backgroundColor = 'white'
-},2500)
-
-
-  setTimeout(easygo, 3000, '2', '5')
-  setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(2) > div:nth-child(5)`)
-    randomo.style.backgroundColor = 'white'
-},3500)
+firstL('2', '2', '4', '5', '6', '3')
 })
 
-function secondL() {
+
+function firstL(t1, t2, t3, t4, t5, t6) {
     let easygo = colorify1
-  setTimeout(easygo, 1000, '4', '4')
+  setTimeout(easygo, 1000, t1, t2)
   setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(4) > div:nth-child(4)`)
+    let randomo = document.querySelector(`#container > div:nth-child(${t1}) > div:nth-child(${t2})`)
     randomo.style.backgroundColor = 'white'
 },1500)
 
 
-  setTimeout(easygo, 2000, '2', '1')
+  setTimeout(easygo, 2000, t3, t4)
   setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(2) > div:nth-child(1)`)
+    let randomo = document.querySelector(`#container > div:nth-child(${t3}) > div:nth-child(${t4})`)
     randomo.style.backgroundColor = 'white'
 },2500)
 
 
-  setTimeout(easygo, 3000, '6', '3')
+  setTimeout(easygo, 3000, t5, t6)
   setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(6) > div:nth-child(3)`)
+    let randomo = document.querySelector(`#container > div:nth-child(${t5}) > div:nth-child(${t6})`)
     randomo.style.backgroundColor = 'white'
 },3500)
 }
 
-function thirdL() {
-    let easygo = colorify1
-  setTimeout(easygo, 1000, '1', '6')
-  setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
-    randomo.style.backgroundColor = 'white'
-},1500)
 
 
-  setTimeout(easygo, 2000, '6', '4')
-  setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(6) > div:nth-child(4)`)
-    randomo.style.backgroundColor = 'white'
-},2500)
 
 
-  setTimeout(easygo, 3000, '1', '6')
-  setTimeout(function() {
-    let randomo = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
-    randomo.style.backgroundColor = 'white'
-},3500)
-}
+
+
 
 
 
@@ -118,29 +84,6 @@ function gogo() {}
 medBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(12,12)
-    
-let groga = colorify2
-
-    setTimeout(groga, 1000, '7', '12')
-    setTimeout(function() {
-        let randomo = document.querySelector(`#container > div:nth-child(7) > div:nth-child(12)`)
-        randomo.style.backgroundColor = 'white'
-    },1500)
-
-    setTimeout(groga, 2000, '1', '8')
-    setTimeout(function() {
-        let randomo = document.querySelector(`#container > div:nth-child(1) > div:nth-child(8)`)
-        randomo.style.backgroundColor = 'white'
-    },2500)
-
-    setTimeout(groga, 3000, '11', '5')
-    setTimeout(function() {
-        let randomo = document.querySelector(`#container > div:nth-child(11) > div:nth-child(5)`)
-        randomo.style.backgroundColor = 'white'
-    },3500)
-   
-
-  
      
 })
 
@@ -156,17 +99,14 @@ function gogo(e) {
   let es = event.target
 
 // Easy Mode
-let lv2tar1 = document.querySelector(`#container > div:nth-child(4) > div:nth-child(4)`)
-let lv2tar2 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(1)`)
-let lv2tar3 = document.querySelector(`#container > div:nth-child(6) > div:nth-child(3)`)
-    let lv1tar1 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(2)`)
-     let tar2 = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
-    let tar3 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(5)`)
+    let tar1 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(2)`)
+     let tar2 = document.querySelector(`#container > div:nth-child(4) > div:nth-child(5)`)
+    let tar3 = document.querySelector(`#container > div:nth-child(6) > div:nth-child(3)`)
 
     if (es === container || es === rows) {
         false;
-    } else if (es === lv1tar1) {
-        lv1tar1.style.backgroundColor = 'green'
+    } else if (es === tar1) {
+        tar1.style.backgroundColor = 'green'
   
     } else if (es === tar2) {
         tar2.style.backgroundColor = 'green'
@@ -179,13 +119,13 @@ let lv2tar3 = document.querySelector(`#container > div:nth-child(6) > div:nth-ch
     
     }
 
-    if (lv1tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green') {
+    if (tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green') {
         setTimeout(() => {
             alert('You have won! Go to the next level')
         }, 500);
      container.textContent = ''
      makeBoth(6,6)
-     secondL()
+   
     }
 
 
