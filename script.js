@@ -42,7 +42,7 @@ function makeBoth(rowNum, cellNum) {
 easyBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(6,6)
-firstL('2', '2', '4', '5', '6', '3')
+
 })
 
 
@@ -52,21 +52,27 @@ function firstL(t1, t2, t3, t4, t5, t6) {
   setTimeout(function() {
     let randomo = document.querySelector(`#container > div:nth-child(${t1}) > div:nth-child(${t2})`)
     randomo.style.backgroundColor = 'white'
-},1500)
+},1200)
 
 
-  setTimeout(easygo, 2000, t3, t4)
+  setTimeout(easygo, 1300, t3, t4)
   setTimeout(function() {
     let randomo = document.querySelector(`#container > div:nth-child(${t3}) > div:nth-child(${t4})`)
     randomo.style.backgroundColor = 'white'
-},2500)
+},1500)
 
 
-  setTimeout(easygo, 3000, t5, t6)
+  setTimeout(easygo, 1700, t5, t6)
   setTimeout(function() {
     let randomo = document.querySelector(`#container > div:nth-child(${t5}) > div:nth-child(${t6})`)
     randomo.style.backgroundColor = 'white'
-},3500)
+},1900)
+
+setTimeout(easygo, 2000, t7, t8)
+setTimeout(function() {
+  let randomo = document.querySelector(`#container > div:nth-child(${t7}) > div:nth-child(${t8})`)
+  randomo.style.backgroundColor = 'white'
+},2200)
 }
 
 
@@ -84,7 +90,7 @@ function gogo() {}
 medBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(12,12)
-     
+    firstL('8', '2', '11', '5', '9', '3', '12', '1')
 })
 
 hardBtn.addEventListener('click', () => {
@@ -99,13 +105,18 @@ function gogo(e) {
   let es = event.target
 
 // Easy Mode
-    let tar1 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(2)`)
-     let tar2 = document.querySelector(`#container > div:nth-child(4) > div:nth-child(5)`)
-    let tar3 = document.querySelector(`#container > div:nth-child(6) > div:nth-child(3)`)
+    let tar1 = document.querySelector(`#container > div:nth-child(8) > div:nth-child(2)`)
+     let tar2 = document.querySelector(`#container > div:nth-child(11) > div:nth-child(5)`)
+    let tar3 = document.querySelector(`#container > div:nth-child(9) > div:nth-child(3)`)
+    let tar4 = document.querySelector(`#container > div:nth-child(12) > div:nth-child(1)`)
+
 
     if (es === container || es === rows) {
         false;
-    } else if (es === tar1) {
+    }   
+ 
+    
+    else if (es === tar1) {
         tar1.style.backgroundColor = 'green'
   
     } else if (es === tar2) {
@@ -114,19 +125,22 @@ function gogo(e) {
     } else if (es === tar3) {
         tar3.style.backgroundColor = 'green'
 
-    } else {
+    } else if (es === tar4) {
+        tar4.style.backgroundColor = 'green'
+    }
+       if ( tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green' && tar4.style.backgroundColor === 'green') {
+        setTimeout(() => {
+            alert('You have won! Go to the next level')
+        }, 800);
+     container.textContent = ''
+     makeBoth(12,12)
+    }
+    else {
         es.style.backgroundColor = 'red'
     
     }
 
-    if (tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green') {
-        setTimeout(() => {
-            alert('You have won! Go to the next level')
-        }, 500);
-     container.textContent = ''
-     makeBoth(6,6)
-   
-    }
+
 
 
 
