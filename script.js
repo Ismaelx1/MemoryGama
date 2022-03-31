@@ -109,8 +109,8 @@ function onclik(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8) 
         let med2 = document.querySelector(`#container > div:nth-child(${s3}) > div:nth-child(${s4})`)
         let med3 = document.querySelector(`#container > div:nth-child(${s5}) > div:nth-child(${s6})`)
         let med4 = document.querySelector(`#container > div:nth-child(${s7}) > div:nth-child(${s8})`)
-
-        if (es === med1) {
+        if (es === container || es === rows) {false}
+        else if (es === med1) {
             med1.style.backgroundColor = 'green'
       
         } else if (es === med2) {
@@ -152,8 +152,9 @@ function gogo() {
     let med3 = document.querySelector(`#container > div:nth-child(5) > div:nth-child(1)`)
     let med4 = document.querySelector(`#container > div:nth-child(3) > div:nth-child(4)`)
 
-
-    if (es === container || es === rows) {
+    if (es === container || es === rows) {false}
+    
+    else if (es === container || es === rows) {
         false;
     }   
  
