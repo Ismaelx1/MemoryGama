@@ -100,7 +100,7 @@ hardBtn.addEventListener('click', () => {
     makeBoth(21,21)
 })
 
-function onclik(s1, s2, s3, s4, s5, s6, s7, s8) {
+function onclik(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8) {
     container.addEventListener('click', gogo, false)
     function gogo(e) {
     
@@ -134,6 +134,8 @@ function onclik(s1, s2, s3, s4, s5, s6, s7, s8) {
             }, 1000);
             setTimeout(conta, 800)
             setTimeout(makeBoth, 800, 6, 6)
+            setTimeout(firstL, 1200, d1, d2, d3, d4, d5, d6, d7, d8)
+            setTimeout(onclik, 1200, d1, d2, d3, d4, d5, d6, d7, d8)
         
            
         }
@@ -181,7 +183,7 @@ function gogo() {
         setTimeout(conta, 800)
         setTimeout(makeBoth, 800, 6, 6) 
         setTimeout(firstL, 1200, '5', '3', '2', '1', '6', '4', '2', '1')
-        setTimeout(onclik, 1200, '5', '3', '2', '1', '6', '4', '2', '1')
+        setTimeout(onclik, 1200, '5', '3', '2', '1', '6', '4', '2', '1', '5', '5', '6', '2', '1', '5', '3', '6')
     }
 }
 
