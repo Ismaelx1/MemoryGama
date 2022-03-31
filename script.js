@@ -14,12 +14,6 @@ function colorify1(s3, s4) {
     randomo.style.backgroundColor= 'black'
 }
 
-function colorify2(s1, s2) {
-    let randomo = document.querySelector(`#container > div:nth-child(${s1}) > div:nth-child(${s2})`)
-
-    randomo.style.backgroundColor= 'black'
-    return randomo
-}
 
 
 function makeBoth(rowNum, cellNum) {
@@ -42,6 +36,9 @@ function makeBoth(rowNum, cellNum) {
 easyBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(6,6)
+    firstL('2', '4', '1', '6', '5', '1', '3', '4')
+  
+
 
 })
 
@@ -84,15 +81,18 @@ function conta() {
     container.textContent =''
 }
 
-
-
-
 function gogo() {}
+
+
+
+
+
+
 
 medBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(12,12)
-    firstL('3', '1', '11', '5', '9', '3', '12', '1')
+
 })
 
 hardBtn.addEventListener('click', () => {
@@ -100,18 +100,55 @@ hardBtn.addEventListener('click', () => {
     makeBoth(21,21)
 })
 
+function onclik(s1, s2, s3, s4, s5, s6, s7, s8) {
+    container.addEventListener('click', gogo, false)
+    function gogo(e) {
+    
+        let es = event.target 
+        let med1 = document.querySelector(`#container > div:nth-child(${s1}) > div:nth-child(${s2})`)
+        let med2 = document.querySelector(`#container > div:nth-child(${s3}) > div:nth-child(${s4})`)
+        let med3 = document.querySelector(`#container > div:nth-child(${s5}) > div:nth-child(${s6})`)
+        let med4 = document.querySelector(`#container > div:nth-child(${s7}) > div:nth-child(${s8})`)
+
+        if (es === med1) {
+            med1.style.backgroundColor = 'green'
+      
+        } else if (es === med2) {
+            med2.style.backgroundColor = 'green'
+      
+        } else if (es === med3) {
+            med3.style.backgroundColor = 'green'
+    
+        } else if (es === med4) {
+            med4.style.backgroundColor = 'green'
+        }
+        
+        else {
+            es.style.backgroundColor = 'red'
+        
+        }
+    
+        if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
+            setTimeout(() => {
+                alert('You have won! Go to the next level')
+            }, 1000);
+            setTimeout(conta, 800)
+            setTimeout(makeBoth, 800, 6, 6)
+        
+           
+        }
+    }
+}
+
 
 container.addEventListener('click', gogo, false)
-function gogo(e) {
-    
-  let es = event.target
-  
-
-// Easy Mode
-    let tar1 = document.querySelector(`#container > div:nth-child(3) > div:nth-child(1)`)
-     let tar2 = document.querySelector(`#container > div:nth-child(11) > div:nth-child(5)`)
-    let tar3 = document.querySelector(`#container > div:nth-child(9) > div:nth-child(3)`)
-    let tar4 = document.querySelector(`#container > div:nth-child(12) > div:nth-child(1)`)
+function gogo() {
+    let es = event.target 
+   
+    let med1 = document.querySelector(`#container > div:nth-child(2) > div:nth-child(4)`)
+    let med2 = document.querySelector(`#container > div:nth-child(1) > div:nth-child(6)`)
+    let med3 = document.querySelector(`#container > div:nth-child(5) > div:nth-child(1)`)
+    let med4 = document.querySelector(`#container > div:nth-child(3) > div:nth-child(4)`)
 
 
     if (es === container || es === rows) {
@@ -119,17 +156,17 @@ function gogo(e) {
     }   
  
     
-    else if (es === tar1) {
-        tar1.style.backgroundColor = 'green'
+    else if (es === med1) {
+        med1.style.backgroundColor = 'green'
   
-    } else if (es === tar2) {
-        tar2.style.backgroundColor = 'green'
+    } else if (es === med2) {
+        med2.style.backgroundColor = 'green'
   
-    } else if (es === tar3) {
-        tar3.style.backgroundColor = 'green'
+    } else if (es === med3) {
+        med3.style.backgroundColor = 'green'
 
-    } else if (es === tar4) {
-        tar4.style.backgroundColor = 'green'
+    } else if (es === med4) {
+        med4.style.backgroundColor = 'green'
     }
     
     else {
@@ -137,16 +174,17 @@ function gogo(e) {
     
     }
 
-
-
-    if ( tar1.style.backgroundColor === 'green' && tar2.style.backgroundColor === 'green' && tar3.style.backgroundColor === 'green' && tar4.style.backgroundColor === 'green') {
+    if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
         setTimeout(() => {
             alert('You have won! Go to the next level')
         }, 1000);
         setTimeout(conta, 800)
-        setTimeout(makeBoth, 800, 12, 12)
+        setTimeout(makeBoth, 800, 6, 6) 
+        setTimeout(firstL, 1200, '5', '3', '2', '1', '6', '4', '2', '1')
+        setTimeout(onclik, 1200, '5', '3', '2', '1', '6', '4', '2', '1')
     }
-
-
 }
-    
+
+
+
+   
