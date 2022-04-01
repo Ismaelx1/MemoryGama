@@ -1,8 +1,8 @@
 let container = document.querySelector('#container')
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
-let demo = document.getElementById('demo')
-let lives = 100;
+
+
 
 const hardBtn = document.getElementById('hard')
 const medBtn = document.getElementById('med')
@@ -123,15 +123,13 @@ function gogo() {
     else {
      
         es.style.backgroundColor = 'red'
-        lives -= 10;
-        demo.textContent = `Your Score is ${lives}%`
-        checkLives()
+      
     
     }
 
     if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
         setTimeout(() => {
-            alert('You have won! Go to the next level')
+            alert('Well Played, Next level starting soon...')
         }, 1000);
         setTimeout(conta, 800)
         setTimeout(makeBoth, 800, 12, 12) 
@@ -184,9 +182,7 @@ function gogo() {
     else {
      
         es.style.backgroundColor = 'red'
-        lives -= 10;
-        demo.textContent = `Your Score is ${lives}%`
-        checkLives()
+      
     
     }
 
@@ -289,7 +285,7 @@ function check(s1, s2, s3, s4, s5, s6, s7, s8) {
     
         if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
             setTimeout(() => {
-                alert('You have won! Go to the next level')
+                alert('Well Played, Next level starting soon...')
             }, 1000);
             setTimeout(conta, 800)
             setTimeout(makeBoth, 800, 6, 6)
@@ -331,7 +327,7 @@ function drake(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8, m
     
         if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
             setTimeout(() => {
-                alert('You have won! Go to the next level')
+         
             }, 1000);
             setTimeout(conta, 800)
             setTimeout(makeBoth, 800, m1, m2)
@@ -390,9 +386,7 @@ function gogo() {
     else {
      
         es.style.backgroundColor = 'red'
-        lives -= 10;
-        demo.textContent = `Your Score is ${lives}%`
-        checkLives()
+      
     
     }
 
