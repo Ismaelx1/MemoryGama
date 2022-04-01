@@ -1,7 +1,8 @@
 let container = document.querySelector('#container')
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
-
+let demo = document.getElementById('demo')
+let lives = 100;
 
 const hardBtn = document.getElementById('hard')
 const medBtn = document.getElementById('med')
@@ -86,14 +87,125 @@ medBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(12,12)
 
+    firstL('8', '4', '11', '6', '9', '10', '3', '12')
+  
+
+
+    container.addEventListener('click', gogo, false)
+function gogo() {
+   let es = event.target
+   
+    let med1 = document.querySelector(`#container > div:nth-child(8) > div:nth-child(4)`)
+    let med2 = document.querySelector(`#container > div:nth-child(11) > div:nth-child(6)`)
+    let med3 = document.querySelector(`#container > div:nth-child(9) > div:nth-child(10)`)
+    let med4 = document.querySelector(`#container > div:nth-child(3) > div:nth-child(12)`)
+
+    if (es === container || es === rows) {false}
+
+    else if (es === container || es === rows) {
+        false;
+    }   
+ 
+    
+    else if (es === med1) {
+        med1.style.backgroundColor = 'green'
+  
+    } else if (es === med2) {
+        med2.style.backgroundColor = 'green'
+  
+    } else if (es === med3) {
+        med3.style.backgroundColor = 'green'
+
+    } else if (es === med4) {
+        med4.style.backgroundColor = 'green'
+    }
+    
+    else {
+     
+        es.style.backgroundColor = 'red'
+        lives -= 10;
+        demo.textContent = `Your Score is ${lives}%`
+    
+    }
+
+    if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
+        setTimeout(() => {
+            alert('You have won! Go to the next level')
+        }, 1000);
+        setTimeout(conta, 800)
+        setTimeout(makeBoth, 800, 12, 12) 
+        setTimeout(firstL, 1200, '9', '2', '1', '12', '5', '9', '6', '1')
+        setTimeout(onclik, 1200, '9', '2', '1', '12', '5', '9', '6', '1', '12', '6', '1', '4', '6', '9', '7', '11', '12', '3', '2', '6', '10', '4', '1', '5', 12, 12)
+    }
+}
+
 })
 
 hardBtn.addEventListener('click', () => {
-    container.textContent = ''
+    conta()
     makeBoth(21,21)
+
+
+
+    firstL('8', '16', '20', '6', '15', '21', '3', '12')
+  
+
+
+    container.addEventListener('click', gogo, false)
+function gogo() {
+   let es = event.target
+   
+    let med1 = document.querySelector(`#container > div:nth-child(8) > div:nth-child(16)`)
+    let med2 = document.querySelector(`#container > div:nth-child(20) > div:nth-child(6)`)
+    let med3 = document.querySelector(`#container > div:nth-child(15) > div:nth-child(21)`)
+    let med4 = document.querySelector(`#container > div:nth-child(3) > div:nth-child(12)`)
+
+    if (es === container || es === rows) {false}
+
+    else if (es === container || es === rows) {
+        false;
+    }   
+ 
+    
+    else if (es === med1) {
+        med1.style.backgroundColor = 'green'
+  
+    } else if (es === med2) {
+        med2.style.backgroundColor = 'green'
+  
+    } else if (es === med3) {
+        med3.style.backgroundColor = 'green'
+
+    } else if (es === med4) {
+        med4.style.backgroundColor = 'green'
+    }
+    
+    else {
+     
+        es.style.backgroundColor = 'red'
+        lives -= 10;
+        demo.textContent = `Your Score is ${lives}%`
+    
+    }
+
+    if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
+        setTimeout(() => {
+            alert('You have won! Go to the next level')
+        }, 1000);
+        setTimeout(conta, 800)
+        setTimeout(makeBoth, 800, 21, 21) 
+        setTimeout(firstL, 1200, '20', '2', '16', '12', '5', '17', '12', '1')
+        setTimeout(onclik, 1200, '20', '2', '16', '12', '5', '17', '12', '1', '12', '17', '11', '7', '17', '9', '7', '19', '2', '18', '2', '15', '10', '4', '10', '5', 21, 21)
+    }
+}
+
+
 })
 
-function onclik(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8, j1, j2, j3, j4, j5, j6, j7, j8) {
+
+
+
+function onclik(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8, j1, j2, j3, j4, j5, j6, j7, j8, m1, m2) {
     container.addEventListener('click', gogo, false)
     function gogo(e) {
     
@@ -117,7 +229,10 @@ function onclik(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8, 
         }
         
         else {
-          es.style.backgroundColor = 'red'
+         
+            es.style.backgroundColor = 'red'
+            lives -= 10;
+            demo.textContent = `Your Score is ${lives}%`
         
         }
     
@@ -126,9 +241,9 @@ function onclik(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8, 
              
             }, 1000);
             setTimeout(conta, 800)
-            setTimeout(makeBoth, 800, 6, 6)
+            setTimeout(makeBoth, 800, m1, m2)
             setTimeout(firstL, 1200, d1, d2, d3, d4, d5, d6, d7, d8)
-            setTimeout(drake, 1200, d1, d2, d3, d4, d5, d6, d7, d8, j1, j2, j3, j4, j5, j6, j7, j8)
+            setTimeout(drake, 1200, d1, d2, d3, d4, d5, d6, d7, d8, j1, j2, j3, j4, j5, j6, j7, j8, m1, m2)
         
            
         }
@@ -161,7 +276,10 @@ function check(s1, s2, s3, s4, s5, s6, s7, s8) {
         }
         
         else {
-          es.style.backgroundColor = 'red'
+         
+            es.style.backgroundColor = 'red'
+            lives -= 10;
+            demo.textContent = `Your Score is ${lives}%`
         
         }
     
@@ -175,7 +293,7 @@ function check(s1, s2, s3, s4, s5, s6, s7, s8) {
      }
     }
 
-function drake(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8) {
+function drake(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8, m1, m2) {
     container.addEventListener('click', gogo, false)
     function gogo(e) {
     
@@ -199,8 +317,10 @@ function drake(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8) {
         }
         
         else {
-          es.style.backgroundColor = 'red'
-        
+         
+            es.style.backgroundColor = 'red'
+            lives -= 10;
+            demo.textContent = `Your Score is ${lives}%`
         }
     
         if ( med1.style.backgroundColor === 'green' && med2.style.backgroundColor === 'green' && med3.style.backgroundColor === 'green' && med4.style.backgroundColor === 'green') {
@@ -208,7 +328,7 @@ function drake(s1, s2, s3, s4, s5, s6, s7, s8, d1, d2, d3, d4, d5, d6, d7, d8) {
                 alert('You have won! Go to the next level')
             }, 1000);
             setTimeout(conta, 800)
-            setTimeout(makeBoth, 800, 6, 6)
+            setTimeout(makeBoth, 800, m1, m2)
             setTimeout(firstL, 1200, d1, d2, d3, d4, d5, d6, d7, d8)
             setTimeout(check, 1200, d1, d2, d3, d4, d5, d6, d7, d8)
         
@@ -262,7 +382,10 @@ function gogo() {
     }
     
     else {
-      es.style.backgroundColor = 'red'
+     
+        es.style.backgroundColor = 'red'
+        lives -= 10;
+        demo.textContent = `Your Score is ${lives}%`
     
     }
 
@@ -273,7 +396,7 @@ function gogo() {
         setTimeout(conta, 800)
         setTimeout(makeBoth, 800, 6, 6) 
         setTimeout(firstL, 1200, '5', '3', '2', '1', '6', '4', '2', '1')
-        setTimeout(onclik, 1200, '5', '3', '2', '1', '6', '4', '2', '1', '5', '5', '6', '2', '1', '5', '3', '6', '5', '2', '6', '1', '4', '3', '5', '1')
+        setTimeout(onclik, 1200, '5', '3', '2', '1', '6', '4', '2', '1', '5', '5', '6', '2', '1', '5', '3', '6', '5', '2', '6', '1', '4', '3', '5', '1', 6, 6)
     }
 }
 
