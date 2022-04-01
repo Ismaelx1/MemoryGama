@@ -1,6 +1,7 @@
 let container = document.querySelector('#container')
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
+let text = document.getElementById('demo')
 
 
 
@@ -86,6 +87,7 @@ function gogo() {}
 medBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(12,12)
+    text.textContent = 'Current Difficulty : Medium!'
 
     firstL('8', '4', '11', '6', '9', '10', '3', '12')
   
@@ -143,7 +145,7 @@ function gogo() {
 hardBtn.addEventListener('click', () => {
     conta()
     makeBoth(21,21)
-
+    text.textContent = 'Current Difficulty : Hard!'
 
 
     firstL('8', '16', '20', '6', '15', '21', '3', '12')
@@ -351,6 +353,7 @@ easyBtn.addEventListener('click', () => {
     container.textContent = ''
     makeBoth(6,6)
     firstL('2', '4', '1', '6', '5', '1', '3', '4')
+    text.textContent = 'Current Difficulty : Easy!'
   
 
 
